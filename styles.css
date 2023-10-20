@@ -3,80 +3,106 @@ h1 {
     text-align: center;
     padding-top: 100px;
 }
+
 h2 {
     color: rgb(9, 30, 45);
     text-align: center;
 }
+
 body {
-  /*background-image: url('tausta2.png');*/
-  background-repeat: no-repeat;
-  background-size: cover;
+    /*background-image: url('tausta2.png');*/
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 ul {
     border-radius: 5px;
     list-style-type: none;
     padding: 0;
-    background-color: #333; /* Background color of the navigation bar */
+    background-color: #333;
+    /* Background color of the navigation bar */
     display: flex;
     justify-content: center;
     position: fixed;
     top: 0;
     z-index: 100;
-    width: 100%; /* Set a maximum width for the navigation bar */
-    max-width: 1265px; /* Adjust the maximum width according to your design */
+    width: 100%;
+    /* Set a maximum width for the navigation bar */
+    max-width: 1265px;
+    /* Adjust the maximum width according to your design */
     margin: 0 auto;
 }
 
 li {
-    display: inline; /* Display list items horizontally */
-    
+    display: inline;
+    /* Display list items horizontally */
+
 }
 
 li a {
     display: block;
-    color: white; /* Text color */
+    color: white;
+    /* Text color */
     text-align: center;
-    padding: 14px 16px; /* Spacing around each link */
+    padding: 14px 16px;
+    /* Spacing around each link */
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #555; /* Background color when hovering over a link */
+    background-color: #555;
+    /* Background color when hovering over a link */
 }
+
 .centered-div {
     margin: 0 auto;
 }
+
 .container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* 100% viewport height for vertical centering */
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center horizontally */
+    height: 100vh;
+    /* 100% viewport height for vertical centering */
 }
 
 /* Optional styles for the centered text */
 .container h1 {
     font-size: 24px;
-    padding: 10px;   
+    padding: 10px;
 }
+
 .container {
     text-align: center;
     padding: 20px;
 }
+
 .img1 {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
+
 .img2 {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
+
 .img3 {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
+
 button {
     background-color: #3498db;
     color: white;
@@ -96,6 +122,7 @@ button:hover {
     border: 1px solid #bdc3c7;
     border-radius: 5px;
 }
+
 .centered-container {
     display: flex;
     flex-direction: column;
@@ -117,6 +144,7 @@ p {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
 }
+
 .widget {
     text-align: center;
     margin: 20px;
@@ -126,21 +154,29 @@ p {
     text-align: center;
     margin: 20px;
 }
+
 .clock-container {
     position: fixed;
-    bottom: 10px; /* Adjust this value to control the vertical position */
-    left: 10px; /* Adjust this value to control the horizontal position */
-    background-color: #fff; /* Add a background color for visibility */
-    padding: 10px; /* Add padding for spacing */
-    border: 1px solid #000; /* Add a border for styling */
-  }
-  form {
+    bottom: 10px;
+    /* Adjust this value to control the vertical position */
+    left: 10px;
+    /* Adjust this value to control the horizontal position */
+    background-color: #fff;
+    /* Add a background color for visibility */
+    padding: 10px;
+    /* Add padding for spacing */
+    border: 1px solid #000;
+    /* Add a border for styling */
+}
+
+form {
     text-align: center;
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 80px;
 }
-table{
+
+table {
     margin-top: 100px;
     text-align: center;
     display: flex;
@@ -149,6 +185,7 @@ table{
     height: 100vh;
     margin: 0;
 }
-aside{
+
+aside {
     text-align: right;
 }

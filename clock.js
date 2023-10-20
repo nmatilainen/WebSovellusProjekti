@@ -5,7 +5,7 @@ function updateClock() {
     const seconds = now.getSeconds();
 
     const timeString = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
-    
+
     document.getElementById('clock').textContent = timeString;
 }
 
