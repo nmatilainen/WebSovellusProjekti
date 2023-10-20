@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="pallo.jpg">
+    <title>My Page Games</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+    <style>
+        body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        table {
+          border-collapse: collapse;
+        }
+        table, td {
+          border: 1px solid black;
+          width: 200px;
+          height: 75px;
+          text-align: center;
+          font-size: 24px;
+        }
+        button {
+          font-size: 18px;
+          margin-top: 100px;
+        }
+        .otsikko{
+            color: rgb(35, 57, 197);
+            text-align: center;
+            padding-bottom: 50px; 
+            font-size: 30px;
+        }
+      </style>
+      <div class="otsikko">
+    <h1>Tic-Tac-Toe</h1>
+    </div>
+<table>
+  <tr>
+    <td id="cell-1"></td>
+    <td id="cell-2"></td>
+    <td id="cell-3"></td>
+  </tr>
+  <tr>
+    <td id="cell-4"></td>
+    <td id="cell-5"></td>
+    <td id="cell-6"></td>
+  </tr>
+  <tr>
+    <td id="cell-7"></td>
+    <td id="cell-8"></td>
+    <td id="cell-9"></td>
+  </tr>
+</table>
+<button id="reset">Reset</button>
+
+<script>
+    const cells = document.querySelectorAll("td");
+    const resetButton = document.getElementById("reset");
+    let currentPlayer = "X";
+    let gameOver = false;
+  
+    function checkWinner() {
+      const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+      ];
+  
+      for (const combo of winningCombos) {
+        const [a, b, c] = combo;
+        if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[b].textContent === cells[c].textContent) {
+          gameOver = true;
+          cells[a].style.color = "red";
+          cells[b].style.color = "red";
+          cells[c].style.color = "red";
+          alert(`${currentPlayer} wins!`);
+          return;
+        }
+      }
+  
+      const isTie = Array.from(cells).every(cell => cell.textContent !== "");
+      if (isTie) {
+        gameOver = true;
+        alert("It's a tie!");
+      }
+    }
+  
+  
+    function handleCellClick(cell) {
+  if (!cell.textContent && !gameOver) {
+    cell.textContent = currentPlayer;
+    checkWinner();
+    
+    // Only switch the currentPlayer if the game is not over
+    if (!gameOver) {
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+    }
+  }
+}
+  
+    cells.forEach(cell => cell.addEventListener("click", () => handleCellClick(cell)));
+    resetButton.addEventListener("click", () => {
+      cells.forEach(cell => {
+        cell.textContent = "";
+        cell.style.color = "black";
+      });
+      currentPlayer = "X";
+      gameOver = false;
+    });
+  </script>
+</body>
+</html>

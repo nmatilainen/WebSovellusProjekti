@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="pallo.jpg">
+    <title>My Page Contact</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+    form {
+        margin-top: 100px; /* You can adjust the value as needed */
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+    <form id="greeting-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+
+    <div id="greeting"></div>
+
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        const nameInput = document.getElementById("name");
+        const greetingDiv = document.getElementById("greeting");
+
+        submitButton.addEventListener("click", () => {
+            const name = nameInput.value;
+
+            if (name) {
+                greetingDiv.innerHTML = `<p>Hello, ${name}! Info about your visit has been submitted to owner of this site</p>`;
+            } else {
+                greetingDiv.innerHTML = "<p>Please enter your name.</p>";
+            }
+        });
+    </script>
+    <h1>If you have any questions you can reach me from email: t2mani01@students.oamk.fi</h1>
+    <div class="clock-container">
+        <div id="clock"></div>
+      </div>
+    <script src="clock.js"></script>
+</body>
+</html>

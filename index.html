@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="pallo.jpg">
+    <title>My Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+    <div class="centered-container">
+        <h1>This is my page, more stuff from the navigation bar!</h1>
+        <button id="colorChangeButton">Change Background</button>
+    </div>
+    <h1>What's Your Favorite Season?</h1>
+
+    <form id="season-form">
+        <label>
+            <input type="radio" name="season" value="spring"> Spring
+        </label>
+        <label>
+            <input type="radio" name="season" value="summer"> Summer
+        </label>
+        <label>
+            <input type="radio" name="season" value="autumn"> Autumn
+        </label>
+        <label>
+            <input type="radio" name="season" value="winter"> Winter
+        </label>
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        const responseDiv = document.getElementById("response");
+
+        submitButton.addEventListener("click", () => {
+            const form = document.getElementById("season-form");
+            const selectedSeason = form.querySelector('input[name="season"]:checked');
+
+            if (selectedSeason) {
+                const seasonValue = selectedSeason.value;
+                let response = "";
+
+                switch (seasonValue) {
+                    case "spring":
+                        response = "Spring is a beautiful season of renewal.";
+                        break;
+                    case "summer":
+                        response = "Summer is a time for fun in the sun.";
+                        break;
+                    case "autumn":
+                        response = "Autumn brings colorful leaves and cooler weather.";
+                        break;
+                    case "winter":
+                        response = "Winter is perfect for cozy evenings by the fire.";
+                        break;
+                }
+
+                responseDiv.innerHTML = `<p>Your favorite season is ${seasonValue}. ${response}</p>`;
+            } else {
+                responseDiv.innerHTML = "<p>Please select a season.</p>";
+            }
+        });
+    </script>
+    <div class="clock-container">
+        <div id="clock"></div>
+      </div>
+    <script src="clock.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/jpg" href="pallo.jpg">
+    <title>My Page Hobbies</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+    <h1>Here is some hobbies i like to do and some pictures of them!</h1>
+    <h2>First, gym!</h2>
+    <p>I have been working out soon almost 6 years</p>
+    <aside>
+        <p>My current maxes are:</p>
+        <p>Bench press: 115kg</p>
+        <p>Squat: 140kg</p>
+        <p>Deadlift: 190kg</p>
+    </aside>
+    <div class="img1">
+        <img src="Salilla.jpeg" alt="" width="300" height="200">
+    </div>
+    <p>Here's picture of me where i deadlift 190kg, sorry about the quality!</p>
+    <h2>Second, golf!</h2>
+    <p>I have been playing golf for 2 summers now, first summer maybe 10 rounds, this summer 70 rounds!</p>
+    <p>HCP is 23.7</p>
+    <p>You can check the weather of your desired city below the picture to know if you can play golf there!</p>
+    <div class="img2">
+        <img src="Golf.jpg" alt="" width="600" height="600">
+    </div>
+    <div class="widget">
+        <input type="text" id="cityInput" placeholder="Enter City">
+        <button id="searchButton">Get Weather</button>
+    </div>
+    <div class="weather-info">
+        <h2>Weather for <span id="cityName"></span></h2>
+        <p>Temperature: <span id="temperature"></span> &deg;C</p>
+        <p>Conditions: <span id="conditions"></span></p>
+    </div>
+    <script>
+        const apiKey = 'fff135904a69ef4b821731bda95b4bad'; // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
+
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const city = document.getElementById('cityInput').value;
+            if (city) {
+                getWeather(city);
+            }
+        });
+
+        function getWeather(city) {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('City not found');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('cityName').textContent = data.name;
+                    document.getElementById('temperature').textContent = data.main.temp;
+                    document.getElementById('conditions').textContent = data.weather[0].description;
+                })
+                .catch(error => {
+                    document.getElementById('cityName').textContent = 'City not found';
+                    document.getElementById('temperature').textContent = '';
+                    document.getElementById('conditions').textContent = '';
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+    <div class="clock-container">
+        <div id="clock"></div>
+      </div>
+      <div class="img3">
+      <img src="giffi.gif" alt="Fun GIF">
+      </div>
+    <script src="clock.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
